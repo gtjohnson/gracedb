@@ -1,0 +1,8 @@
+body{background-color:#ddd;}
+
+.navbar-default .navbar-brand {color: #9AB816}
+.form-group {border-radius: 0}
+.btn {border-radius:0}
+
+#chart{border:1px solid #ccc; padding:30px;}
+#range{border:1px solid #ccc; padding:30px; padding-top:50px;}

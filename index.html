@@ -9,18 +9,100 @@
 		<link href="css/custom.css" rel="stylesheet" />
 
 		<!-- script links -->
-		<script src="js/bootstrap/bootstrap.min.css"></script>
 		<script src="js/chartjs/jquery-2.0.3.min.js"></script>
+		<script src="js/bootstrap/bootstrap.min.js"></script>
 		<script src="js/chartjs/globalize.min.js"></script>
 		<script src="js/chartjs/dx.chartjs.js"></script>
+
+		<script type="text/javascript">
+
+var chartDataSource = [
+    {
+        year: 1, Source1: 227, Source2: 331,
+        Source3: 1436, Source4: 547, Source5: 12
+    },
+    {
+        year: 2, Source1: 285, Source2: 416,
+        Source3: 1718, Source4: 605, Source5: 15
+    },
+    {
+        year: 3, Source1: 365, Source2: 512,
+        Source3: 2156, Source4: 657, Source5: 19
+    },
+    {
+        year: 4, Source1: 478, Source2: 612,
+        Source3: 2644, Source4: 1300, Source5: 22
+    },
+    {
+        year: 5, Source1: 633, Source2: 720,
+        Source3: 3180, Source4: 930, Source5: 26
+    },
+    {
+        year: 6, Source1: 810, Source2: 833,
+        Source3: 3678, Source4: 1700, Source5: 30
+    },
+    {
+        year: 7, Source1: 1016, Source2: 936,
+        Source3: 4149, Source4: 1800, Source5: 35
+    }
+];
+$(function () {             
+    $("#chart").dxChart({
+    	palette: ['#64AA90', '#0A3142', '#B3D61A', '#001F30', '#E1E181'],
+        dataSource: chartDataSource,
+        commonSeriesSettings: {
+        	argumentField: 'year'
+        },
+	series: [{
+        name: 'Source1',            
+        valueField: 'Source1'
+    }, {
+        name: 'Source2',
+        valueField: 'Source2'
+    },{
+        name: 'Source3',
+        valueField: 'Source3'
+    },{
+        name: 'Source4',
+        valueField: 'Source4'
+    },{ 
+        name: 'Source5',
+        valueField: 'Source5'
+    }]
+});
+});
+		</script>
+
+<script type="text/javascript">
+$(function () {
+            $("#range").dxRangeSelector({
+            	background: {color:'#B3D61A'},
+            	palette: ['#64AA90', '#0A3142', '#B3D61A', '#001F30', '#E1E181'],
+            	scale: {
+        		startValue: new Date(2012, 8, 29, 00,00,00),
+        		endValue: new Date(2012, 8, 29, 24,00,00),
+        		minorTickInterval: 'hour',
+        		marker: { visible: false }
+
+
+        	}
+
+
+        	});
+        })
+</script>
 
 	</head>
 
 	<body>
 		<div class="row">
-
+			
+			
 			<nav class="navbar navbar-default" role="navigation">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
 			  <!-- Brand and toggle get grouped for better mobile display -->
+
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 			      <span class="sr-only">Toggle navigation</span>
@@ -28,6 +110,7 @@
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			    </button>
+
 			    <a class="navbar-brand" href="#">&nbsp; GraCEDb</a>
 			  </div>
 
@@ -39,34 +122,44 @@
 			      <li class="dropdown">
 			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sort <b class="caret"></b></a>
 			        <ul class="dropdown-menu">
-			          <li><a href="#">Action</a></li>
-			          <li><a href="#">Another action</a></li>
-			          <li><a href="#">Something else here</a></li>
+			          <li><a href="#">data type 1</a></li>
+			          <li><a href="#">data type 2</a></li>
+			          <li><a href="#">data type 3</a></li>
 			          <li class="divider"></li>
-			          <li><a href="#">Separated link</a></li>
-			          <li class="divider"></li>
-			          <li><a href="#">One more separated link</a></li>
+			          <li><a href="#">help</a></li>
+			          <li><a href="#">FAQ</a></li>
 			        </ul>
 			      </li>
 			    </ul>
-			    <form class="navbar-form navbar-left" role="search">
+			    <form class="navbar-form navbar-right" role="search">
 			      <div class="form-group">
 			        <input type="text" class="form-control" placeholder="Search">
 			      </div>
-			      <button type="submit" class="btn btn-default">Submit</button>
+			      <button type="submit" class="btn btn-default">Submit</button>&nbsp;
 			    </form>
 			    
 			      </li>
 			    </ul>
+			    </div>
 			  </div><!-- /.navbar-collapse -->
 			</nav>
 
+		
+		<div class="col-md-1"></div>
 		</div>
 
 
 
 
-
+<!-- Chart JS Example -->
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<div id="chart" style="max-width:800px;height: 400px;margin:0 auto"></div>
+<div id="range" style="height:170px;max-width:800px;margin: 0px auto; margin-bottom:100px"></div>
+</div>
+<div class="col-md-2"></div>
+</div>
 
 	</body>
 
