@@ -1,0 +1,115 @@
+/*! 
+* DevExpress Exporter (part of ChartJS)
+* Version: 13.2.5
+* Build date: Dec 3, 2013
+*
+* Copyright (c) 2012 - 2013 Developer Express Inc. ALL RIGHTS RESERVED
+* EULA: http://chartjs.devexpress.com/EULA
+*/
+
+.dx-menu
+{
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: Segoe UI;
+  white-space: nowrap;
+}
+.dx-menu
+{
+  float: left;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #c7c7c7;
+}
+.dx-menu .dx-menu-group
+{
+  vertical-align: middle;
+  display: table-cell;
+  text-align: left;
+  position: relative;
+}
+.dx-menu .dx-menu-item
+{
+  padding: 5px;
+  margin-bottom: -1px;
+  padding-bottom: 4px;
+}
+.dx-menu .dx-menu-item .dx-menu-image
+{
+  vertical-align: middle;
+  display: table-cell;
+  background-position: center;
+}
+.dx-menu .dx-menu-item .dx-menu-caption
+{
+  display: table-cell;
+  vertical-align: middle;
+}
+.dx-menu .dx-menu-item .dx-menu-chouser-down
+{
+  width: 11px;
+  height: 11px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAQAAAADpb+tAAAAJklEQVQoU2NgoCk4zrHvzvH/MAhkc2BIIAkiJNAEIRI7z2EIUgYArDEhksIWkcMAAAAASUVORK5CYII=) no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+.dx-menu .dx-menu-main-item-hovered
+{
+  position: relative;
+  z-index: 99999;
+  border: 1px solid #4b4b4b;
+  border-bottom: 0;
+  background-color: #454545;
+  border-radius: 2px 2px 0 0;
+  box-shadow: -6px 0 6px -6px rgba(0,0,0,.35),6px 0 6px -6px rgba(0,0,0,.35);
+  padding: 4px;
+}
+.dx-menu .dx-menu-main-item-hovered.dx-menu-empty-childitems
+{
+  border: 1px solid #4b4b4b;
+  box-shadow: 0 3px 6px rgba(0,0,0,.35);
+  border-radius: 2px;
+  margin-bottom: -2px;
+}
+.dx-menu .dx-menu-child-items
+{
+  background-color: #454545;
+  box-shadow: 0 3px 6px rgba(0,0,0,.35);
+  position: absolute;
+  display: none;
+  z-index: 99998;
+  border: 1px solid #4b4b4b;
+  border-radius: 0 2px 2px 2px;
+  padding: 1px;
+}
+.dx-menu .dx-menu-child-items .dx-menu-group
+{
+  display: block;
+}
+.dx-menu .dx-menu-child-items .dx-menu-item
+{
+  margin: 0;
+  padding: 4px;
+  padding-right: 30px;
+}
+.dx-menu .dx-menu-child-items .dx-menu-item:hover
+{
+  background-color: #5f5f5f;
+  border: 0;
+}
+.dx-exporter-icon-to
+{
+  width: 24px;
+  height: 24px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAi0lEQVQ4y2P4z0AaZBjUGo7/xwLrSdWAoQVNA6okNi3EaEDRQpyG/8RqgECqazjue3wmBGIzCJsGyeOtxGq4ClaeQqwNq4+7Hjc6XgBW3HA8Ha+G4xzH5Y47HU89PhmsPP24JtCzvvg0RB+vPj4JCKuBLJPjbJDwIeQkvuN82NIn3lDCBamjYcjmaQDm2Y92cNrPBQAAAABJRU5ErkJggg==) no-repeat;
+}
+.dx-exporter-icon-print
+{
+  width: 24px;
+  height: 24px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAARklEQVQ4y2P4z0AaZBiOGo7/R4WjGpA1HC89PhMIMTQARUDipZgaZuLVMBO3BkyIVwNOSLwG2tuASwMZqRUaE9hg2fDKogBKII/HciyUygAAAABJRU5ErkJggg==) no-repeat;
+}

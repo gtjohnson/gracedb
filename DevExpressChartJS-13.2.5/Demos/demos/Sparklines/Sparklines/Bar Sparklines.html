@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>		
+		<title>Bar Sparklines</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="../../../styles.css" rel="stylesheet" />
+		<script src="../../../js/jquery-1.10.2.min.js"></script>
+		<script src="../../../js/knockout-3.0.0.js"></script>
+		<script src="../../../js/globalize.min.js"></script>
+		<script src="../../../js/dx.chartjs.js"></script>
+                                      
+	</head>
+	<body>
+		<script>
+			$(function ()  
+				{
+   var alumOptions = {
+    dataSource: getAluminiumCosts(),
+    argumentField: 'month',
+    valueField: '2010',
+    type: 'bar',
+    showMinMax: true
+},
+platOptions = {
+    dataSource: getPlatinumCosts(),
+    argumentField: 'month',
+    valueField: '2010',
+    type: 'bar',
+    showMinMax: true,
+    showFirstLast: false,
+    barPositiveColor: '#6babac',
+    minColor: '#9ab57e',
+    maxColor: '#565077'
+},
+silverOptions = {
+    dataSource: getSilverCosts(),
+    argumentField: 'month',
+    valueField: '2010',
+    type: 'bar',
+    barPositiveColor: '#e55253',
+    firstLastColor: '#ebdd8f'
+};
+
+function getAluminiumCosts() {
+    return [{ month: 1, 2010: 2262, 2011: 2454, 2012: 2262 },
+    { month: 2, 2010: 2087, 2011: 2537, 2012: 2087 },
+    { month: 3, 2010: 2238, 2011: 2586, 2012: 2238 },
+    { month: 4, 2010: 2349, 2011: 2689, 2012: 2349 },
+    { month: 5, 2010: 2071, 2011: 2591, 2012: 2071 },
+    { month: 6, 2010: 1957, 2011: 2584, 2012: 1957 },
+    { month: 7, 2010: 2008, 2011: 2554, 2012: 2008 },
+    { month: 8, 2010: 2119, 2011: 2413, 2012: 2119 },
+    { month: 9, 2010: 2199, 2011: 2327, 2012: 2199 },
+    { month: 10, 2010: 2374, 2011: 2210, 2012: 2374 },
+    { month: 11, 2010: 2354, 2011: 2102, 2012: 2354 },
+    { month: 12, 2010: 2369, 2011: 2038, 2012: 2369 }];
+};
+function getPlatinumCosts() {
+    return [{ month: 1, 2010: 1558, 2011: 1790, 2012: 1514 },
+    { month: 2, 2010: 1525, 2011: 1826, 2012: 1662 },
+    { month: 3, 2010: 1601, 2011: 1775, 2012: 1660 },
+    { month: 4, 2010: 1717, 2011: 1804, 2012: 1588 },
+    { month: 5, 2010: 1634, 2011: 1788, 2012: 1468 },
+    { month: 6, 2010: 1555, 2011: 1768, 2012: 1448 },
+    { month: 7, 2010: 1530, 2011: 1763, 2012: 1427 },
+    { month: 8, 2010: 1541, 2011: 1809, 2012: 1462 },
+    { month: 9, 2010: 1597, 2011: 1743, 2012: 1627 },
+    { month: 10, 2010: 1694, 2011: 1543, 2012: 1636 },
+    { month: 11, 2010: 1695, 2011: 1602, 2012: 1576 },
+    { month: 12, 2010: 1711, 2011: 1459, 2012: 1580 }];
+};
+function getSilverCosts() {
+   return [{ month: 1, 2010: 17, 2011: 30, 2012: 27 },
+   { month: 2, 2010: 28, 2011: 28, 2012: 33 },
+   { month: 3, 2010: 34, 2011: 34, 2012: 35 },
+   { month: 4, 2010: 37, 2011: 37, 2012: 32 },
+   { month: 5, 2010: 47, 2011: 47, 2012: 30 },
+   { month: 6, 2010: 37, 2011: 37, 2012: 28 },
+   { month: 7, 2010: 34, 2011: 34, 2012: 27 },
+   { month: 8, 2010: 40, 2011: 40, 2012: 27 },
+   { month: 9, 2010: 41, 2011: 41, 2012: 31 },
+   { month: 10, 2010: 30, 2011: 30, 2012: 34 },
+   { month: 11, 2010: 34, 2011: 34, 2012: 31 },
+   { month: 12, 2010: 32, 2011: 32, 2012: 33 }];
+};
+
+var html = '<table class="demo-table" border="1"><tr><th></th><th>Aluminium (UDS/ton)</th><th>Platinum (USD/troy ounce)</th><th>Silver (USD/troy ounce)</th></tr><tr><th>2010</th><td><div class="sparkline alum2010"></div></td><td><div class="sparkline plat2010"></div></td><td><div class="sparkline sil2010"></div></td></tr><tr><th>2011</th><td><div class="sparkline alum2011"></div></td><td><div class="sparkline plat2011"></div></td><td><div class="sparkline sil2011"></div></td></tr><tr><th>2012</th><td><div class="sparkline alum2012"></div></td><td><div class="sparkline plat2012"></div></td><td><div class="sparkline sil2012"></div></td></tr></table>';
+$("#chartContainer").append(html);
+
+$('.alum2010').dxSparkline(alumOptions);
+$('.plat2010').dxSparkline(platOptions);
+$('.sil2010').dxSparkline(silverOptions);
+
+$('.alum2011').dxSparkline($.extend(alumOptions, { valueField: '2011' }));
+$('.plat2011').dxSparkline($.extend(platOptions, { valueField: '2011' }));
+$('.sil2011').dxSparkline($.extend(silverOptions, { valueField: '2011' }));
+
+$('.alum2012').dxSparkline($.extend(alumOptions, { valueField: '2012' }));
+$('.plat2012').dxSparkline($.extend(platOptions, { valueField: '2012' }));
+$('.sil2012').dxSparkline($.extend(silverOptions, { valueField: '2012' }));
+}
+
+			);
+		</script>
+		<div class="header">
+			<div class="content">
+				<a class="button" title="Online Demo Gallery" target="_blank" href="http://chartjs.devexpress.com/Demos/VizGallery/">Online Demo Gallery</a>
+	<div class = "logo">
+					<a class="logo" title="ChartJS Gallery" href="../../../index.html"></a>
+				</div>
+			</div>
+		</div>
+		<div class="line"></div>		
+		<div class="title">
+			<h1>Sparklines</h1>&nbsp;&nbsp;&nbsp;<h2>Sparklines</h2>
+		</div>
+		<div class="content">
+			<div class="pane">
+				<div class="long-title"><h3>Monthly Prices of Aluminium, Platinum and Silver</h3></div>
+				<div id="chartContainer" style="width: 100%; height: 440px;"></div>
+				<div class="credits"></div>
+			</div>
+		</div>
+	</body>
+</html>
