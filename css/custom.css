@@ -1,8 +1,30 @@
 body{background-color:#ddd;}
 
+.col-md-1{margin:0 auto; padding:0;}
+.col-md-2{margin:0 auto; padding:0;}
+.col-md-4{margin:0 auto; padding:0;}
+.col-md-8{margin:0 auto; padding:0;}
+
 .navbar-default .navbar-brand {color: #9AB816}
 .form-group {border-radius: 0}
 .btn {border-radius:0}
+.well {
+		-webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0.05);
+		box-shadow: inset 0 0px 0px rgba(0,0,0,0.05);
+		padding:0;
+		margin:0 auto;
+		margin-right:-31px;
+		border-radius: 0; 
+		background-color: #ddd; 
+		border:1px solid #ccc;
+		border-right:0px;}
+
+ul{margin:0 auto;list-style-type: none; -webkit-margin-before: .5em;
+-webkit-margin-after: 0;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 10px;}
 
 #chart{border:1px solid #ccc; padding:30px;}
 #range{border:1px solid #ccc; padding:30px; padding-top:50px;}
+
