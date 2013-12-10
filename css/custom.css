@@ -1,10 +1,16 @@
-body{background-color:#ddd;}
+body{background-color:#eee;}
+h1{font-family:'Roboto', sans-serif; font-weight:300;}
+li{font-family:'Roboto', sans-serif;}
+
+.body{}
+.data{margin-top:50px;}
 
 .col-md-1{margin:0 auto; padding:0;}
 .col-md-2{margin:0 auto; padding:0;}
 .col-md-4{margin:0 auto; padding:0;}
 .col-md-8{margin:0 auto; padding:0;}
 
+.navbar-brand{margin:0 auto; padding:5px 20px 0px;}
 .navbar-default .navbar-brand {color: #9AB816}
 .form-group {border-radius: 0}
 .btn {border-radius:0}
@@ -15,9 +21,9 @@ body{background-color:#ddd;}
 		margin:0 auto;
 		margin-right:-31px;
 		border-radius: 0; 
-		background-color: #ddd; 
+		background-color: #eee; 
 		border:1px solid #ccc;
-		border-right:0px;}
+		box-shadow: 0;}
 
 ul{margin:0 auto;list-style-type: none; -webkit-margin-before: .5em;
 -webkit-margin-after: 0;
@@ -25,6 +31,6 @@ ul{margin:0 auto;list-style-type: none; -webkit-margin-before: .5em;
 -webkit-margin-end: 0px;
 -webkit-padding-start: 10px;}
 
-#chart{border:1px solid #ccc; padding:30px;}
-#range{border:1px solid #ccc; padding:30px; padding-top:50px;}
+#chart{border:0px solid #ccc; padding:30px;}
+#range{border:0px solid #ccc; padding:30px; padding-top:50px;}
 
