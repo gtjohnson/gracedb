@@ -6,7 +6,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="css/custom.css" rel="stylesheet" />
+		<link href="../css/custom.css" rel="stylesheet" />
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -16,7 +16,6 @@
 		<script src="js/chartjs/globalize.min.js"></script>
 		<script src="js/chartjs/dx.chartjs.js"></script>
 		<script src="js/dygraph-combined.js"></script>
-		<script type="text/javascript" src="js/load.js"></script>
 		
 
 
@@ -84,7 +83,7 @@
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
 		<section id="intro">
-			<h1>gracedb test page</h1>
+			<h1>gracedb design test page.</h1>
 			<p>The gravitational-wave candidate event database (GraCEDb) is a prototype system to organize candidate events from gravitational-wave searches and to provide an environment to record information about follow-ups. A simple client tool is provided in LSCSoft to submit a candidate event to the database. You can read about using the service at the Howto page.</p>
 		</section>
 	</div>
@@ -93,35 +92,34 @@
 
 <!-- Chart JS Example -->
 <div class="row data">
-	<div class="col-md-2">
-			
-		</div>
+	<div class="col-md-2"><div id="loading">
+			<img src="img/loading.gif" alt="loading..."/>
+		</div></div>
 	<div class="col-md-1">
 		<div class="well">
-			<ul id="nav">
-				<li><a href="index.html">home</a></li>
-				<li><a href="graphs.html">graphs</a></li>
-				<li>testEvent2</li>
-				<li>testEvent3</li>
-				<li>testEvent4</li>
+			<ul id="menu">
+				<li id="testevent1">testEvent1</li>
+				<li id="testevent2">testEvent2</li>
+				<li id="testevent3">testEvent3</li>
+				<li id="testevent4">testEvent4</li>
 
 			</ul>
 		</div>
 	</div>
 
-<div id="wrapper">
+
 	<div class="col-md-8" id="content" style="width:600px; height:200px; background-color:gray; margin-bottom:100px">
-	<p>test info</p>
-		
+
+		<p>test test data info testing paragraph</p>
 
 
 	</div>
 	<div class="col-md-1"></div>
 </div>
 
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js"></script>
 
-
-
+<script type="text/javascript" src="load.js"></script>
 
 
 	</body>

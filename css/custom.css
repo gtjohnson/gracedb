@@ -5,6 +5,25 @@ li{font-family:'Roboto', sans-serif;}
 .body{}
 .data{margin-top:50px;}
 
+/** DYGRAPHS **/
+
+
+/*Labels on the X & Y axes:*/
+.dygraph-axis-label{font-family:'Roboto', sans-serif; font-weight:300;}
+.dygraph-axis-label-x{}
+.dygraph-axis-label-y{}
+.dygraph-axis-label-y2{}
+
+/*Chart labels*/
+.dygraph-title{font-family:'Roboto', sans-serif; font-weight:300;}
+.dygraph-xlabel{}
+.dygraph-ylabel{}
+.dygraph-y2label{}
+
+
+
+/* BOOTSTRAP */
+
 .col-md-1{margin:0 auto; padding:0;}
 .col-md-2{margin:0 auto; padding:0;}
 .col-md-4{margin:0 auto; padding:0;}
@@ -33,4 +52,19 @@ ul{margin:0 auto;list-style-type: none; -webkit-margin-before: .5em;
 
 #chart{border:0px solid #ccc; padding:30px;}
 #range{border:0px solid #ccc; padding:30px; padding-top:50px;}
+
+#load{
+    display: none;  
+    position: absolute;  
+    right: 10px;  
+    top: 10px;  
+    background: url(../img/ajax-loader.gif);  
+    width: 43px;  
+    height: 11px;  
+    text-indent: -9999em;  
+}
+
+	 #menu li:hover{
+	color: #9AB816;
+	cursor: pointer;
 
