@@ -6,9 +6,11 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<link href="css/bootstrap.min.css" rel="stylesheet" />
-		<link href="css/custom.css" rel="stylesheet" />
 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+		<link href="css/custom.css" rel="stylesheet" title="themeLight"/>
+		<link href="css/customDark.css" rel="stylesheet" title="themeDark"/>
+
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
 		<!-- script links -->
 		<script src="js/chartjs/jquery-2.0.3.min.js"></script>
@@ -17,6 +19,7 @@
 		<script src="js/chartjs/dx.chartjs.js"></script>
 		<script src="js/dygraph-combined.js"></script>
 		<script type="text/javascript" src="js/load.js"></script>
+		<script type="text/javascript" src="js/styleswitch.js"></script>
 		
 
 
@@ -58,13 +61,21 @@
 			          <li><a href="#">help</a></li>
 			          <li><a href="#">FAQ</a></li>
 			        </ul>
+			        </li>
+			        <li class="dropdown">
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme<b class="caret"></b></a>
+			        <ul class="dropdown-menu">
+			          <li><a class="styleswitch" rel="themeLight" href="#">Light</a></li>
+			          <li style="background-color:#333; color:white"><a style="color:white" class="styleswitch" rel="themeDark" href="#">Dark</a></li>
+			          
+			        </ul>
 			      </li>
 			    </ul>
 			    <form class="navbar-form navbar-right" role="search">
 			      <div class="form-group">
-			        <input type="text" class="form-control" placeholder="Search">
+			        <input type="text" class="form-control" placeholder="search events">
 			      </div>
-			      <button type="submit" class="btn btn-default">Submit</button>&nbsp;
+			      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>&nbsp;
 			    </form>
 			    
 			      </li>
@@ -83,8 +94,10 @@
 <div class="row body">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
+
+
 		<section id="intro">
-			<h1>gracedb test page</h1>
+			<h1>GraCEDb test page</h1>
 			<p>The gravitational-wave candidate event database (GraCEDb) is a prototype system to organize candidate events from gravitational-wave searches and to provide an environment to record information about follow-ups. A simple client tool is provided in LSCSoft to submit a candidate event to the database. You can read about using the service at the Howto page.</p>
 		</section>
 	</div>
@@ -110,8 +123,34 @@
 	</div>
 
 <div id="wrapper">
-	<div class="col-md-8" id="content" style="width:600px; height:200px; background-color:gray; margin-bottom:100px">
-	<p>test info</p>
+	<div class="col-md-8" id="content" style=" margin-bottom:100px">
+	<div id="div_g" style="width:900px; height:300px;"></div>
+<script type="text/javascript">
+ $(document).ready(function () {
+      var data = [];
+      var t = new Date();
+      for (var i = 10; i >= 0; i--) {
+        var x = new Date(t.getTime() - i * 1000);
+        data.push([x, Math.random()]);
+      }
+
+      var g = new Dygraph(document.getElementById("div_g"), data,
+                          {
+                            drawPoints: true,
+                            showRoller: true,
+                            valueRange: [0.0, 1.2],
+                            labels: ['Time', 'Random']
+                          });
+      // It sucks that these things aren't objects, and we need to store state in window.
+      window.intervalId = setInterval(function() {
+        var x = new Date();  // current time
+        var y = Math.random();
+        data.push([x, y]);
+        g.updateOptions( { 'file': data } );
+      }, 1000);
+    }
+);
+</script>
 		
 
 
