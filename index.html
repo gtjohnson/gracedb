@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns= "http://www.w3.org/1999/xhtml">
 	<head>
-		<title>GraCEDb chart.js test</title>
+		<title>GraCEDb Prototype</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -9,14 +9,13 @@
 
 		<link href="css/custom.css" rel="stylesheet" title="themeLight"/>
 		<link href="css/customDark.css" rel="stylesheet" title="themeDark"/>
-		<link href="css/bootstrap-switch.css" rel="stylesheet"/>
+
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
 		<!-- script links -->
 		<script src="js/jquery-2.0.3.min.js"></script>
 		<script src="js/bootstrap/bootstrap.min.js"></script>
-		<script src="js/chartjs/globalize.min.js"></script>
 		<script src="js/dygraph-combined.js"></script>
 		<script type="text/javascript" src="js/load.js"></script>
 		<script type="text/javascript" src="js/styleswitch.js"></script>
@@ -163,7 +162,19 @@
 
     });
 </script>
-		
+
+<div id="graphdiv2"
+  style="width:500px; height:300px; margin-top:100px"></div>
+<script type="text/javascript">
+  g2 = new Dygraph(
+    document.getElementById("graphdiv2"),
+    "data.csv", // path to CSV file
+    {colors:['#0087B3', 'orange']}          // options
+  );
+</script>
+
+
+
 
 
 	</div>
