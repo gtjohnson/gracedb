@@ -1,5 +1,5 @@
 a{color:#222;}
-body{background-color:#eee;}
+body{background-color:#eee; padding-top:50px;}
 button{font-family:'Roboto', sans-serif;}
 h1{font-family:'Roboto', sans-serif; font-weight:300;}
 input{font-family: 'Roboto', sans-serif}
@@ -27,6 +27,9 @@ li{font-family:'Roboto', sans-serif;}
 
 /* BOOTSTRAP */
 
+.btn-dark{background-color: #333; border:1px solid black; color:#9AB816;}
+.btn-dark:hover{background-color: #444; border:1px solid #9AB816; color:#9AB816;}
+.btn-light{border:1px solid #9AB816}
 
 .form-group{font-family: 'Roboto', sans-serif}
 .col-md-1{margin:0 auto; padding:0;}

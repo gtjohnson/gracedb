@@ -9,6 +9,7 @@
 
 		<link href="css/custom.css" rel="stylesheet" title="themeLight"/>
 		<link href="css/customDark.css" rel="stylesheet" title="themeDark"/>
+		<link href="css/bootstrap-switch.css" rel="stylesheet"/>
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
@@ -20,6 +21,7 @@
 		<script src="js/dygraph-combined.js"></script>
 		<script type="text/javascript" src="js/load.js"></script>
 		<script type="text/javascript" src="js/styleswitch.js"></script>
+		<script type="text/javascript" src="js/bootstrap-switch.js"></script>
 		
 
 
@@ -30,7 +32,7 @@
 		<div class="row">
 			
 			
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="col-md-1"></div>
 			<div class="col-md-9">
 			  <!-- Brand and toggle get grouped for better mobile display -->
@@ -62,24 +64,34 @@
 			          <li><a href="#">FAQ</a></li>
 			        </ul>
 			        </li>
-			        <li class="dropdown">
-			        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme<b class="caret"></b></a>
-			        <ul class="dropdown-menu">
-			          <li><a class="styleswitch" rel="themeLight" href="#">Light</a></li>
-			          <li style="background-color:#333; color:white"><a style="color:white" class="styleswitch" rel="themeDark" href="#">Dark</a></li>
-			          
-			        </ul>
-			      </li>
+			        
+			        
+			        
+			      
 			    </ul>
-			    <form class="navbar-form navbar-right" role="search">
+			    <form class="navbar-form navbar-left" role="search">
 			      <div class="form-group">
 			        <input type="text" class="form-control" placeholder="search events">
 			      </div>
 			      <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>&nbsp;
 			    </form>
-			    
-			      </li>
+
+			    <ul>
+				    <li>
+				    <div class="btn-group navbar-right" data-toggle="buttons">
+					  <label class="btn btn-default btn-sm btn-light styleswitch" rel="themeLight">
+					    <input type="radio" name="options" id="option1"> Light
+					  </label>
+					  
+					<label class="btn btn-default btn-sm btn-dark styleswitch" rel="themeDark">
+						<input type="radio" name="options" id="option2"> Dark
+					</label>
+					  
+					  
+					</div>
+				    </li>  
 			    </ul>
+			      
 			    </div>
 			  </div><!-- /.navbar-collapse -->
 			</nav>
@@ -123,8 +135,8 @@
 	</div>
 
 <div id="wrapper">
-	<div class="col-md-8" id="content" style=" margin-bottom:100px">
-	<div id="div_g" style="width:900px; height:300px;"></div>
+	<div class="col-md-7" id="content" style=" margin-bottom:100px">
+	<div id="div_g" style="width:auto; height:300px;"></div>
 <script type="text/javascript">
  $(document).ready(function () {
       var data = [];
@@ -136,6 +148,7 @@
 
       var g = new Dygraph(document.getElementById("div_g"), data,
                           {
+                          	colors:['orange'],
                             drawPoints: true,
                             showRoller: true,
                             valueRange: [0.0, 1.2],
@@ -148,14 +161,14 @@
         data.push([x, y]);
         g.updateOptions( { 'file': data } );
       }, 1000);
-    }
-);
+
+    });
 </script>
 		
 
 
 	</div>
-	<div class="col-md-1"></div>
+	<div class="col-md-2"></div>
 </div>
 
 
